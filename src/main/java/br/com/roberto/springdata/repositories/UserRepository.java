@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import br.com.roberto.springdata.entities.User;
 
+@Repository
 public interface UserRepository extends JpaRepository<User, Long>{
 
 	@Query("SELECT obj FROM User obj where obj.salary >= :minSalary AND obj.salary <=:maxSalary")
