@@ -28,7 +28,4 @@ public class OrderController {
 		Order order = orderService.findById(id);
 		return ResponseEntity.ok(order);
 	}	
-	
-	
-
 }

@@ -2,9 +2,9 @@ package br.com.roberto.springdata.controllers;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,18 +15,19 @@ import br.com.roberto.springdata.entities.User;
 import br.com.roberto.springdata.services.UserService;
 
 @RestController
-@RequestMapping(value = "/users", 
-	consumes = MediaType.APPLICATION_JSON_VALUE,
-	produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/users") 
+//	consumes = MediaType.APPLICATION_JSON_VALUE,
+//	produces = MediaType.APPLICATION_JSON_VALUE)
 public class UserController {
 
+	@Autowired
 	private UserService userService;
 
-	public UserController(UserService userService) {
-		this.userService = userService;
-	}
+//	public UserController(UserService userService) {
+//		this.userService = new UserService() ;
+//	}
 
-	@GetMapping
+	@GetMapping(value = "/all")
 	public ResponseEntity<List<User>> findAll() {
 		List<User> resultado = userService.findAll();
 		return ResponseEntity.ok(resultado);

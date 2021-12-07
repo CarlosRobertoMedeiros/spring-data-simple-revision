@@ -67,5 +67,3 @@ public class SpringdataApplication implements CommandLineRunner {
 	}
 
 }
-//https://www.youtube.com/watch?v=OX5MmJrFTdw
-// Continuar a partir dos 40 minutos

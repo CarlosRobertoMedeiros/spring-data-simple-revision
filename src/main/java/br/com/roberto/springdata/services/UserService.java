@@ -2,6 +2,7 @@ package br.com.roberto.springdata.services;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -12,15 +13,16 @@ import br.com.roberto.springdata.repositories.UserRepository;
 @Service
 public class UserService {
 
+	@Autowired
 	private UserRepository userRepository;
 
-	UserService() {
+	public UserService() {
 	}
 
-	public UserService(UserRepository userRepository) {
-		super();
-		this.userRepository = userRepository;
-	}
+//	public UserService(UserRepository userRepository) {
+//		super();
+//		this.userRepository = userRepository;
+//	}
 
 	public List<User> findAll() {
 		return userRepository.findAll();
